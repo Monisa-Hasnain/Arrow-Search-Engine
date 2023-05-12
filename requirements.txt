@@ -1,43 +1,45 @@
-# packages in environment at /Users/harikrishnareddy/opt/anaconda3/envs/ArrowSE:
-#
-# Name                    Version                   Build  Channel
-aiohttp                   3.8.3           py311h6c40b1e_0  
-aiosignal                 1.2.0              pyhd3eb1b0_0  
-async-timeout             4.0.2           py311hecd8cb5_0  
-attrs                     22.1.0          py311hecd8cb5_0  
-brotlipy                  0.7.0           py311h6c40b1e_1002  
-bzip2                     1.0.8                h1de35cc_0  
-ca-certificates           2023.01.10           hecd8cb5_0  
-certifi                   2022.12.7       py311hecd8cb5_0  
-cffi                      1.15.1          py311h6c40b1e_3  
-charset-normalizer        2.0.4              pyhd3eb1b0_0  
-cryptography              39.0.1          py311hf6deb26_0  
-cyrus-sasl                2.1.27              h9b9944d_10  
-elasticsearch             7.13.3             pyhd3eb1b0_0  
-frozenlist                1.3.3           py311h6c40b1e_0  
-idna                      3.4             py311hecd8cb5_0  
-krb5                      1.19.4               hdba6334_0  
-libcxx                    14.0.6               h9765a3e_0  
-libedit                   3.1.20221030         h6c40b1e_0  
-libffi                    3.4.2                hecd8cb5_6  
-libntlm                   1.6                  h9ed2024_0  
-multidict                 6.0.2           py311h6c40b1e_0  
-mysql                     5.7.24               h56848d4_0  
-ncurses                   6.4                  hcec6c5f_0  
-openssl                   1.1.1t               hca72f7f_0  
-pip                       23.0.1          py311hecd8cb5_0  
-pycparser                 2.21               pyhd3eb1b0_0  
-pyopenssl                 23.0.0          py311hecd8cb5_0  
-pysocks                   1.7.1           py311hecd8cb5_0  
-python                    3.11.3               h1fd4e5f_0  
-readline                  8.2                  hca72f7f_0  
-requests                  2.29.0          py311hecd8cb5_0  
-setuptools                66.0.0          py311hecd8cb5_0  
-sqlite                    3.41.2               h6c40b1e_0  
-tk                        8.6.12               h5d9f67b_0  
-tzdata                    2023c                h04d1e81_0  
-urllib3                   1.26.15         py311hecd8cb5_0  
-wheel                     0.38.4          py311hecd8cb5_0  
-xz                        5.4.2                h6c40b1e_0  
-yarl                      1.8.1           py311h6c40b1e_0  
-zlib                      1.2.13               h4dc903c_0  
+adal==1.2.7
+aiohttp @ file:///Users/ec2-user/ci_py311/aiohttp_1678323186748/work
+aiosignal @ file:///tmp/build/80754af9/aiosignal_1637843061372/work
+async-timeout @ file:///Users/ec2-user/ci_py311/async-timeout_1678320112070/work
+attrs @ file:///Users/ec2-user/ci_py311/attrs_1678315289647/work
+azure-cognitiveservices-search-websearch==2.0.0
+azure-common==1.1.28
+azure-core==1.26.4
+beautifulsoup4==4.12.2
+blinker==1.6.2
+brotlipy==0.7.0
+certifi @ file:///Users/ec2-user/ci_py311/certifi_1678321191472/work/certifi
+cffi @ file:///Users/ec2-user/ci_py311/cffi_1678315312775/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+click==8.1.3
+cryptography @ file:///Users/ec2-user/ci_py311_2/cryptography_1679335457662/work
+elasticsearch @ file:///tmp/build/80754af9/elasticsearch_1625769069476/work
+Flask==2.3.2
+frozenlist @ file:///Users/ec2-user/ci_py311/frozenlist_1678318685088/work
+idna @ file:///Users/ec2-user/ci_py311/idna_1678315819133/work
+isodate==0.6.1
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.2
+msrest==0.7.1
+msrestazure==0.6.4
+multidict @ file:///Users/ec2-user/ci_py311/multidict_1678318765630/work
+numpy==1.24.3
+oauthlib==3.2.2
+pandas==2.0.1
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+PyJWT==2.6.0
+pyOpenSSL @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_19gfn1ib_u/croot/pyopenssl_1678965300171/work
+PySocks @ file:///Users/ec2-user/ci_py311/pysocks_1678315868424/work
+python-dateutil==2.8.2
+pytz==2023.3
+requests @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_ec2sxfa_zk/croot/requests_1682607519671/work
+requests-oauthlib==1.3.1
+six==1.16.0
+soupsieve==2.4.1
+typing_extensions==4.5.0
+tzdata==2023.3
+urllib3 @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_61c6ppfd7m/croot/urllib3_1680254700568/work
+Werkzeug==2.3.4
+yarl @ file:///Users/ec2-user/ci_py311/yarl_1678323149735/work
