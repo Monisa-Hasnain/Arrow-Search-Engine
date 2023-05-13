@@ -2,7 +2,8 @@ from settings import *
 import requests
 from requests.exceptions import RequestException
 import pandas as pd
-from storage import DBStorage
+from storage_mysql import DBStorage
+
 from datetime import datetime
 from urllib.parse import quote_plus
 

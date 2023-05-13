@@ -6,6 +6,7 @@ import html
 
 app = Flask(__name__)
 
+
 styles = """
 <style>
     .site {
