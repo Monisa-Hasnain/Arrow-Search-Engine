@@ -25,9 +25,13 @@ MarkupSafe==2.1.2
 msrest==0.7.1
 msrestazure==0.6.4
 multidict @ file:///Users/ec2-user/ci_py311/multidict_1678318765630/work
+mysql==0.0.3
+mysql-connector-python==8.0.33
+mysqlclient==2.1.1
 numpy==1.24.3
 oauthlib==3.2.2
 pandas==2.0.1
+protobuf==3.20.3
 pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
 PyJWT==2.6.0
 pyOpenSSL @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_19gfn1ib_u/croot/pyopenssl_1678965300171/work
