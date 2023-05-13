@@ -8,13 +8,11 @@ def index():
     if request.method == "POST":
         query = request.form.get("query")
         results_df = search(query)
-        jsonResults = format_results(results_df) #json format
-        results = results_df.to_dict('records')
+        results = format_results(results_df)
         return render_template("results.html", query=query, results=results)
     return render_template("index.html")
 
-# data resutrs in json format
-def format_results(results_df): 
+def format_results(results_df):
     results = []
     for index, row in results_df.iterrows():
         result = {
@@ -29,10 +27,6 @@ def format_results(results_df):
         }
         results.append(result)
     return results
-
-if __name__ == "__main__":
-    app.run()
-
 
 if __name__ == "__main__":
     app.run()
