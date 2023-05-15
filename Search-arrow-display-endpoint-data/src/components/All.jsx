@@ -23,7 +23,6 @@ function All() {
     })
       .then(response => response.json())
       .then(data => {
-        debugger;
         console.log(data);
         setData(data);
       })

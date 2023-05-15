@@ -10,8 +10,6 @@ def index():
         results_df = search(query)
         jsonResults = format_results(results_df) #json format
         results = results_df.to_dict('records')
-        print(results)
-        print(jsonify(results))
         return jsonify(results)
         #return render_template("results.html", query=query, results=results)
     return render_template("index.html")
