@@ -5,19 +5,19 @@ CREATE DATABASE ArrowSearchEngine;
 USE ArrowSearchEngine;
 
 -- drop database ArrowSearchEngine;
+-- drop table search_results;
 
--- drop table results;
+CREATE TABLE search_results (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    query VARCHAR(255),
+    title VARCHAR(255),
+    url VARCHAR(255),
+    snippet TEXT,
+    source VARCHAR(255),
+    priority INT,
+    blocked BOOL
+);
 
-CREATE TABLE IF NOT EXISTS results (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                query VARCHAR(255),
-                ranks INT,
-                link VARCHAR(255),
-                title VARCHAR(255),
-                snippet TEXT,
-                html TEXT,
-                created DATETIME
-            )
+select * from search_results;
 
--- select * from results;
 -- select * from results where query='arrow';
