@@ -8,12 +8,14 @@ import { Images } from './components/images';
 import { Videos } from './components/videos';
 import { Shoppings } from './components/shoppings';
 import { Maps } from './components/maps';
+import { SearchProvider } from './context/SearchContext';
 
 function App() {
   const location = useLocation();
 
   return (
     <>
+      <SearchProvider>
        {location.pathname === '/' ? null : <Navbar />}
         <Routes>
           <Route exact path="/" element={<SearchPage />} />
@@ -24,6 +26,7 @@ function App() {
           <Route path="/shoppings" element={<Shoppings />} />
           <Route path="/maps" element={<Maps />} />
         </Routes>
+        </SearchProvider>
     </>
   );
 }

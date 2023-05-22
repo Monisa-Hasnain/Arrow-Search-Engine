@@ -1,11 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './All.css';
 import { Link } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { dummy_data } from './images';
+import { SearchContext } from '../context/SearchContext';
 
 function All() {
-  const [data, setData] = useState([]);
+  const { data, setData } = useContext(SearchContext);
+
+  useEffect(() => {
+    setData(dummy_data)
+  }, []);
+  
+
+  // const [data, setData] = useState([]);
   const location = useLocation();
   const searchQuery = location.state?.searchQuery;
   
@@ -29,17 +37,11 @@ function All() {
   //     .catch(error => console.error(error));
   // }, [searchQuery]);
 
+   
   return (
     <div className="LinkTabs-container">
       <div className="LinkTabs-content">
-        {/* {data.map((page, index) => (
-          <div className="LinkTabs-tabContent" key={index} >
-            <a href={page.url}>{page.title}</a>
-            <p>{page.snippet}</p>
-          </div>
-        ))} */}
-
-        {dummy_data.map((page, index) => (
+        {data.map((page, index) => (
           <div className="LinkTabs-tabContent" key={index} >
             <p className="LinkTabs-url">{page.url}</p>
             <a href={page.url} className="LinkTabs-title">{page.title}</a>

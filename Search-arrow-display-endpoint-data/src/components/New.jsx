@@ -1,11 +1,16 @@
 import React from 'react'
+import { useContext } from 'react';
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material';
 import { dummy_data } from './images';
+import { SearchContext } from '../context/SearchContext';
+
 
 export const New = () => {
-    const newItems = dummy_data.map((data) => {
-      const { id, title, webpage_links } = data;
-      const webpage_link = webpage_links[0]; // Assuming there's only one video URL per item
+  const { data, setData } = useContext(SearchContext);
+
+    const newItems = data.map((data) => {
+      const { id, title, url } = data;
+      const webpage_link = url; // Assuming there's only one video URL per item
       return { id, title, webpage_link };
     });
   

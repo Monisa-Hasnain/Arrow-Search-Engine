@@ -13,7 +13,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 
-const pages = ['ALL', 'NEW', 'IMAGES', 'VIDEOS','SHOPPINGS', 'MAPS'];
+const pages = ['ALL', 'NEWS', 'IMAGES', 'VIDEOS','SHOPPINGS', 'MAP'];
 
 function Navbar() {
   const [searchTerm, setSearchTerm] = React.useState('');

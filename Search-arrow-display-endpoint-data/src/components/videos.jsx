@@ -1,12 +1,18 @@
 import React from 'react'
+import { useContext } from 'react';
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material';
 import { dummy_data } from './images';
+import { SearchContext } from '../context/SearchContext';
+import './videos.css'
+
 
 export const Videos = () => {
+  const { data, setData } = useContext(SearchContext);
+
   // Extract video URLs and related data from dummy_data
-  const videoItems = dummy_data.map((data) => {
+  const videoItems = data.map((data) => {
     const { id, title, video_urls } = data;
-    const videoUrl = video_urls[0]; // Assuming there's only one video URL per item
+    const videoUrl = JSON.parse(video_urls)[0];
     return { id, title, videoUrl };
   });
 
