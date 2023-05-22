@@ -1,0 +1,40 @@
+# Base image for React frontend
+FROM node:14 as frontend
+WORKDIR /app/frontend
+COPY frontend/package*.json ./
+RUN npm install
+COPY frontend/ ./
+RUN npm run build
+
+# Base image for Flask backend
+FROM python:3.8 as backend
+WORKDIR /app/backend
+COPY backend/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY backend/ ./
+
+# Expose the backend port
+EXPOSE 5000
+
+# Set environment variables, if necessary
+# ENV VARIABLE_NAME value
+
+# Set the entrypoint command to run the backend
+CMD ["python", "app.py"]
+
+
+
+# To build and run the Docker container:
+
+# Open a terminal or command prompt.
+# Navigate to the root directory of your project where the Dockerfile is located.
+# Build the Docker image by running the following command:
+
+# docker build -t search-engine .
+# This command will build the Docker image using the Dockerfile in the current directory and tag it with the name search-engine.
+
+# After the image is built successfully, you can run a container using the following command:
+
+# docker run -d -p 5000:5000 search-engine
+# This command starts a Docker container based on the search-engine image and maps port 5000 of the container to port 5000 of your local machine. Adjust the port mapping if your backend Flask application listens on a different port.
+
