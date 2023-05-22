@@ -1,0 +1,11 @@
+.ImageGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .ImageCard {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
