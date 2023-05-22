@@ -1,0 +1,39 @@
+.LinkTabs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 10px;
+    margin-left: 10%;
+  }
+  
+  .LinkTabs-tabs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 16px;
+  }
+  
+  .LinkTabs-tab {
+    padding: 8px 16px;
+    background-color: #f7f7f7;
+    border: none;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+  }
+  
+  .LinkTabs-tab.active {
+    background-color: #fff;
+  }
+  
+  .LinkTabs-content {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .LinkTabs-tabContent {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+  }
+  
