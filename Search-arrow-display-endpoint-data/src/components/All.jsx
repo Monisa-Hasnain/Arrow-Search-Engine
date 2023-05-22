@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './All.css';
 import { Link } from '@mui/material';
 import { useLocation } from 'react-router-dom';
+import { dummy_data } from './images';
 
 function All() {
   const [data, setData] = useState([]);
@@ -12,51 +13,40 @@ function All() {
     query: searchQuery,
   });
 
-
-  useEffect(() => {
-    const formData = new FormData();
-    formData.append('query', searchQuery);
-  
-    fetch('http://127.0.0.1:5000/', {
-      method: 'POST',
-      body: formData
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setData(data);
-      })
-      .catch(error => console.error(error));
-  }, [searchQuery]);
-  
-
-
   // useEffect(() => {
+  //   const formData = new FormData();
+  //   formData.append('query', searchQuery);
+  
   //   fetch('http://127.0.0.1:5000/', {
-  //   method: 'POST',
-  //   headers: {
-  //   'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify({searchParams})
-  //   }).then(response => response.json())
-  //   .then(data => {
-  //       debugger
-  //       console.log(data)
-  //       setData(data) })
+  //     method: 'POST',
+  //     body: formData
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log(data);
+  //       setData(data);
+  //     })
   //     .catch(error => console.error(error));
   // }, [searchQuery]);
 
   return (
     <div className="LinkTabs-container">
       <div className="LinkTabs-content">
-        {data.map((page, index) => (
+        {/* {data.map((page, index) => (
           <div className="LinkTabs-tabContent" key={index} >
-            <a href={page.link}>{page.title}</a>
+            <a href={page.url}>{page.title}</a>
             <p>{page.snippet}</p>
+          </div>
+        ))} */}
+
+        {dummy_data.map((page, index) => (
+          <div className="LinkTabs-tabContent" key={index} >
+            <p className="LinkTabs-url">{page.url}</p>
+            <a href={page.url} className="LinkTabs-title">{page.title}</a>
+            <p className="LinkTabs-snippet">{page.snippet}</p>
           </div>
         ))}
       </div>
-
     </div>
   );
 }
