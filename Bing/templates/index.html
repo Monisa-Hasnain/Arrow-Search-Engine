@@ -1,0 +1,48 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Engine</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Search Engine</h1>
+    <form id="searchForm" method="POST">
+        <input type="text" name="query" placeholder="Enter your query" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#searchForm').submit(function(event) {
+                event.preventDefault();
+                var query = $('input[name="query"]').val();
+                $.ajax({
+                    type: 'POST',
+                    url: '/',
+                    data: {query: query},
+                    success: function(response) {
+                        displayResults(response);
+                    }
+                });
+            });
+
+            function displayResults(results) {
+                var resultsDiv = $('#results');
+                resultsDiv.empty();
+                if (results.length > 0) {
+                    for (var i = 0; i < results.length; i++) {
+                        var result = results[i];
+                        var resultHtml = '<p>' + result.title + '</p>';
+                        resultsDiv.append(resultHtml);
+                    }
+                } else {
+                    resultsDiv.append('<p>No results found.</p>');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
