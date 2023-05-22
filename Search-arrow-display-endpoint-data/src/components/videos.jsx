@@ -1,5 +1,5 @@
 import React from 'react'
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material';
 import { dummy_data } from './images';
 import { SearchContext } from '../context/SearchContext';
@@ -8,6 +8,13 @@ import './videos.css'
 
 export const Videos = () => {
   const { data, setData } = useContext(SearchContext);
+
+  useEffect(() => {
+    const savedData = localStorage.getItem('myData');
+    if (savedData) {
+      setData(JSON.parse(savedData));
+    }
+  }, [data]);
 
   // Extract video URLs and related data from dummy_data
   const videoItems = data.map((data) => {

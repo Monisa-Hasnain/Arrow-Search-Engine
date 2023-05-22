@@ -8,12 +8,27 @@ import { SearchContext } from '../context/SearchContext';
 function All() {
   const { data, setData } = useContext(SearchContext);
 
+  // Retrieve data from local storage and update the component's state on mount
   useEffect(() => {
-    setData(dummy_data)
+    const savedData = localStorage.getItem('myData');
+    if (savedData) {
+      setData(JSON.parse(savedData));
+    }
   }, []);
-  
 
-  // const [data, setData] = useState([]);
+  // Save data to local storage before the page reloads
+  useEffect(() => {
+    const saveDataToLocalstorage = () => {
+      localStorage.setItem('myData', JSON.stringify(data));
+    };
+
+    window.addEventListener('beforeunload', saveDataToLocalstorage);
+
+    return () => {
+      window.removeEventListener('beforeunload', saveDataToLocalstorage);
+    };
+  }, [data]);
+  
   const location = useLocation();
   const searchQuery = location.state?.searchQuery;
   
@@ -21,21 +36,21 @@ function All() {
     query: searchQuery,
   });
 
-  // useEffect(() => {
-  //   const formData = new FormData();
-  //   formData.append('query', searchQuery);
+  useEffect(() => {
+    const formData = new FormData();
+    formData.append('query', searchQuery);
   
-  //   fetch('http://127.0.0.1:5000/', {
-  //     method: 'POST',
-  //     body: formData
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data);
-  //       setData(data);
-  //     })
-  //     .catch(error => console.error(error));
-  // }, [searchQuery]);
+    fetch('http://127.0.0.1:5000/', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setData(data);
+      })
+      .catch(error => console.error(error));
+  }, [searchQuery]);
 
    
   return (
