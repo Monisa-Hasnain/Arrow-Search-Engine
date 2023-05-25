@@ -1,0 +1,9 @@
+.NewCard {
+    margin-bottom: 16px; /* Adjust the value as per your preference */
+    transition: background-color 0.3s ease-in-out;
+
+  }
+
+.NewCard:hover {
+    background-color: #75f9f5; /* Change to your desired hover color */
+  }

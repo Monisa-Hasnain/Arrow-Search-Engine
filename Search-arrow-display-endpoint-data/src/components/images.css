@@ -9,3 +9,7 @@
     margin-bottom: 20px;
   }
   
+  
+.ImageCard:hover {
+  background-color: #75f9f5; /* Change to your desired hover color */
+}

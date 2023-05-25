@@ -9,3 +9,7 @@
     width: calc(33.33% - 10px); /* Adjust the width of each card based on the desired layout */
     margin-right: 10px; /* Add right margin to create space between the cards */
   }
+
+  .VideoCard:hover {
+    background-color: #12e1fc; /* Change to your desired hover color */
+  }

@@ -58,3 +58,24 @@
     color: blue;
     text-decoration: underline;
   }
+
+  .LinkTabs-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .LinkTabs-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+  }
+
+  .Pagination {
+    display: 'flex';
+    justify-content: 'center';
+    align-items: 'center' 
+  }
+
+  .VideoCard {
+    margin-bottom: 16px; /* Adjust the value as per your preference */
+  }
