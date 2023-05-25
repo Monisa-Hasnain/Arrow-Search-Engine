@@ -1,0 +1,11 @@
+.VideoGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .VideoCard {
+    margin-bottom: 20px;
+    width: calc(33.33% - 10px); /* Adjust the width of each card based on the desired layout */
+    margin-right: 10px; /* Add right margin to create space between the cards */
+  }
